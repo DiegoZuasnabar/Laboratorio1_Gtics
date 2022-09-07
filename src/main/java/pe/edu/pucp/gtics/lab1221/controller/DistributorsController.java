@@ -1,7 +1,7 @@
 package pe.edu.pucp.gtics.lab1221.controller;
 
 /*
-com
+comk
 */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
