@@ -44,30 +44,38 @@
     <div id="content">
         <main>
             <!-- Contenido -->
-        <div class="page-header text-center">
-            <h2>Editar Distribuidora</h2>
-        </div>
-        <div class="container-fluid">
-            <form method="POST">
-                <!-- Completar -->
-                <!-- Completar -->
-                <!-- Completar -->
-                <!-- Completar -->
-
-                <a class="btn btn-danger">Cancelar</a>
-                <button type="submit" class="btn btn-primary">Guardar</button>
-            </form>
-        </div>
+            <div class="page-header text-center">
+                <h2>Editar Distribuidora</h2>
+            </div>
+            <div class="container-fluid">
+                <form method="post" th:action="@{'/distribuidoras/guardar'}" >
+                    <div class="mb-3">
+                        <input th:value="${distri.iddistribuidora}" name="iddistribuidora" type="hidden" />
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input th:value="${distri.nombre}" name="nombre" type="text" class="form-control" id="nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fundacion" class="form-label">Fundacion</label>
+                        <input  th:value="${distri.fundacion}" name="fundacion" type="text" class="form-control" id="fundacion">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sede" class="form-label">Sede</label>
+                        <input  th:value="${distri.sede}" name="sede" type="text" class="form-control" id="sede">
+                    </div>
+                    <a th:href="@{'/distribuidoras/lista'}" class="btn btn-danger">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
         </main>
     </div>
-            <!-- /Contenido -->
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Colocar # Grupo - PUCP @ 2022</div>
-                </div>
+    <!-- /Contenido -->
+    <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">Colocar # Grupo - PUCP @ 2022</div>
             </div>
-        </footer>
+        </div>
+    </footer>
 </div>
 <script th:src="@{/js/jquery-3.4.1.min.js}"></script>
 <script th:src="@{/js/popper.min.js}"></script>

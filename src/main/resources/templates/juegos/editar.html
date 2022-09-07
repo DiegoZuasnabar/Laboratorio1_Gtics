@@ -44,30 +44,43 @@
     <div id="content">
         <main>
             <!-- Contenido -->
-        <div class="page-header text-center">
-            <h2>Editar Juego</h2>
-        </div>
-        <div class="container-fluid">
-                <form method="POST">
-                    <!-- Completar -->
-                    <!-- Completar -->
-                    <!-- Completar -->
-                    <!-- Completar -->
-
-                    <a  class="btn btn-danger">Cancelar</a>
+            <div class="page-header text-center">
+                <h2>Editar Juego</h2>
+            </div>
+            <div class="container-fluid">
+                <form method="post" th:action="@{'/juegos/guardar'}" >
+                    <div class="mb-3">
+                        <input th:value="${juegos.id}" name="id" type="hidden" />
+                        <input th:value="${plataforma.id}" name="idplataforma" type="hidden" />
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input th:value="${juegos.nombre}" name="nombre" type="text" class="form-control" id="nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripcion</label>
+                        <input  th:value="${juegos.descripcion}" name="descripcion" type="text" class="form-control" id="descripcion">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Sede</label>
+                        <input  th:value="${plataforma.nombre}" name="nombre" type="text" class="form-control" id="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="precio" class="form-label">Precio</label>
+                        <input  th:value="${juegos.precio}" name="precio" type="text" class="form-control" id="precio">
+                    </div>
+                    <a th:href="@{'/juegos/lista'}" class="btn btn-danger">Cancelar</a>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </form>
-        </div>
+            </div>
         </main>
     </div>
-            <!-- /Contenido -->
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Colocar # Grupo - PUCP @ 2022</div>
-                </div>
+    <!-- /Contenido -->
+    <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">Colocar # Grupo - PUCP @ 2022</div>
             </div>
-        </footer>
+        </div>
+    </footer>
 </div>
 <script th:src="@{/js/jquery-3.4.1.min.js}"></script>
 <script th:src="@{/js/popper.min.js}"></script>
